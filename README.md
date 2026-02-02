@@ -101,15 +101,15 @@ ollama pull llama3.1
 ```bash
 python src/main.py
 ```
-    3. You will see an interactive prompt: "Question (or 'quit'):"
-    4. Example question: "What methods can we use for DNA adductomics screening?"
-    5. Expected output format:
+3. You will see an interactive prompt: "Question (or 'quit'):"
+4. Example question: "What methods can we use for DNA adductomics screening?"
+5. Expected output format:
 	•	Answer text
 	•	Sources as [pdf:page] entries
     **Question:**  
     What methods can we use for DNA adductomics screening?
     **Answer:**  
-    Common approaches include LC–MS/MS, high-resolution mass spectrometry, and derivatization-based enrichment techniques, which enable detection of low-abundance DNA adducts in complex biological samples. [review.pdf:3] [methods.pdf:12]
+    Common approaches include LC–MS/MS, high-resolution mass spectrometry, and derivatization-based enrichment techniques, which enable detection of low-abundance DNA adducts in complex 		biological samples. [review.pdf:3] [methods.pdf:12]
 
 ## 6) Configuration
 	•	Model: llama3.1 via Ollama
