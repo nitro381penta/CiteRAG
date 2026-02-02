@@ -55,8 +55,9 @@ CiteRAG is not intended as a general-purpose chatbot; it is designed as a resear
 ## Installation
 
 ### 1) Install Python
+
 **macOS (Homebrew):**
-```bash
+bash
 brew install python
 
 **Ubuntu/Debian:**
@@ -78,6 +79,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -U pip
 python3 -m pip install -r requirements.txt
+```
 
 Windows (PowerShell):
 ```bash
@@ -85,16 +87,20 @@ python -m venv .venv
 .venv\Scripts\activate
 python -m pip install -U pip
 python -m pip install -r requirements.txt
+```
 
 ### 4) Install and pull the local model
 Install Ollama from https://ollama.ai
+```
 ollama pull llama3.1
+```
 
 ## 5) Quickstart
 1. Put PDFs into `data/`
 2. Run the app:
 ```bash
 python src/main.py
+```
     3. You will see an interactive prompt: "Question (or 'quit'):"
     4. Example question: "What methods can we use for DNA adductomics screening?"
     5. Expected output format:
