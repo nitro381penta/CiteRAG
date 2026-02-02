@@ -1,0 +1,13 @@
+data_dir: data
+db_dir: chroma_db
+
+embed_model: sentence-transformers/all-MiniLM-L6-v2
+ollama_model: llama3.1
+
+chunk_size: 900
+chunk_overlap: 150
+
+retrieval:
+  search_type: mmr
+  k: 4
+  fetch_k: 20
