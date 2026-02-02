@@ -1,6 +1,3 @@
-# CiteRAG
-CiteRAG is a local, privacy-first research assistant that answers PDF questions with verifiable, page-level citations using Ollama (llama3.1).
-=======
 # CiteRAG — Grounded answers with transparent evidence
 > A local research assistant that answers with evidence, not guesses.
 
