@@ -143,9 +143,7 @@ To force a full rebuild, delete `chroma_db/` and rerun `citerag index`.
 	•	“pip not found” (mac) → use python3 -m pip ...
     •	This error usually appears when huggingface_hub and transformers versions drift apart:
         ImportError: cannot import name 'is_offline_mode' from huggingface_hub → install over constraints:
-        ```bash
         python -m pip install -r requirements.txt -c constraints.txt
-        ```
 
 ## License
 MIT 
