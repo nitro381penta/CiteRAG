@@ -84,7 +84,6 @@ python3 -m pip install -U pip
 python3 -m pip install -r requirements.txt
 python3 -m pip install -r requirements.txt -c constraints.txt
 python3 -m pip install -e .
->>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
 ```
 
 Windows (PowerShell):
@@ -95,7 +94,6 @@ python -m pip install -U pip
 python -m pip install -r requirements.txt
 python -m pip install -r requirements.txt -c constraints.txt
 python -m pip install -e .
->>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
 ```
 
 ### 4) Install and pull the local model
