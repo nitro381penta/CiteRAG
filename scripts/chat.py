@@ -5,7 +5,7 @@ from citerag.embeddings import make_embeddings
 from citerag.indexer import open_or_create_chroma
 from citerag.retrieve import make_retriever
 from citerag.rag_chain import answer_question
-from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM
 from citerag.citations import unique_sources
 
 

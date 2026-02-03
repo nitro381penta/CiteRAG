@@ -48,7 +48,7 @@ CiteRAG is not intended as a general-purpose chatbot; it is designed as a resear
 └── README.md
 
 ## Requirements
-- Python 3.10+ recommended
+- Python 3.13 tested (works), 3.10+ supported
 - Ollama installed and running
 - Supported OS: macOS, Linux, Windows
 
@@ -59,10 +59,13 @@ CiteRAG is not intended as a general-purpose chatbot; it is designed as a resear
 **macOS (Homebrew):**
 bash
 brew install python
+```
 
 **Ubuntu/Debian:**
+```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip
+```
 
 **Windows:**
 Download and install from https://www.python.org/downloads/
@@ -78,15 +81,25 @@ macOS / Linux:
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -U pip
+<<<<<<< HEAD
 python3 -m pip install -r requirements.txt
+=======
+python3 -m pip install -r requirements.txt -c constraints.txt
+python3 -m pip install -e .
+>>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
 ```
 
 Windows (PowerShell):
 ```bash
 python -m venv .venv
-.venv\Scripts\activate
+source .venv/bin/activate
 python -m pip install -U pip
+<<<<<<< HEAD
 python -m pip install -r requirements.txt
+=======
+python -m pip install -r requirements.txt -c constraints.txt
+python -m pip install -e .
+>>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
 ```
 
 ### 4) Install and pull the local model
@@ -97,7 +110,6 @@ ollama pull llama3.1
 
 ## 5) Quickstart
 1. Put PDFs into `data/`
-2. Run the app:
 ```bash
 python src/main.py
 ```
@@ -108,6 +120,7 @@ python src/main.py
 	•	Sources as [pdf:page] entries
     **Question:**  
     What methods can we use for DNA adductomics screening?
+
     **Answer:**  
     Common approaches include LC–MS/MS, high-resolution mass spectrometry, and derivatization-based enrichment techniques, which enable detection of low-abundance DNA adducts in complex 		biological samples. [review.pdf:3] [methods.pdf:12]
 
@@ -117,17 +130,26 @@ python src/main.py
 	•	Vector store: Chroma persisted locally
 	•	Retrieval: MMR (diverse top-k)
 
-You can set overrides via .env (optional). Copy .env.example to .env and adjust if needed.
+You can override defaults via .env (optional).  
+Copy .env.example to .env and adjust if needed.  
+Key variables include:
+- OLLAMA_MODEL (default: llama3.1)
+- HF_TOKEN (optional, speeds up downloads)
 
 ## 7) Indexing and updates
 CiteRAG persists embeddings in chroma_db/. On startup it checks the data/ directory and only embeds new or modified PDFs.
-To force a full rebuild, delete chroma_db/ and rerun the application.
+To force a full rebuild, delete `chroma_db/` and rerun `citerag index`.
 
 ## 8) Troubleshooting
 	•	“ollama: command not found” → install Ollama and restart your terminal
 	•	“model not found” → ollama pull llama3.1
 	•	“no documents loaded” → ensure PDFs exist in data/
 	•	“pip not found” (mac) → use python3 -m pip ...
+    •	This error usually appears when huggingface_hub and transformers versions drift apart:
+        ImportError: cannot import name 'is_offline_mode' from huggingface_hub → install over constraints:
+        ```bash
+        python -m pip install -r requirements.txt -c constraints.txt
+        ```
 
 ## License
 MIT 

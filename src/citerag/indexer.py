@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 
 MANIFEST_FILE = "index_manifest.json"
