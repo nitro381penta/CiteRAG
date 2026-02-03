@@ -57,7 +57,7 @@ CiteRAG is not intended as a general-purpose chatbot; it is designed as a resear
 ### 1) Install Python
 
 **macOS (Homebrew):**
-bash
+```bash
 brew install python
 ```
 
@@ -81,9 +81,7 @@ macOS / Linux:
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -U pip
-<<<<<<< HEAD
 python3 -m pip install -r requirements.txt
-=======
 python3 -m pip install -r requirements.txt -c constraints.txt
 python3 -m pip install -e .
 >>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
@@ -94,9 +92,7 @@ Windows (PowerShell):
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -U pip
-<<<<<<< HEAD
 python -m pip install -r requirements.txt
-=======
 python -m pip install -r requirements.txt -c constraints.txt
 python -m pip install -e .
 >>>>>>> 0af65be (Stabilize HF/Transformers deps; add constraints + pyproject; expose citerag CLI)
