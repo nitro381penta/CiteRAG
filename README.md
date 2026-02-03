@@ -104,7 +104,7 @@ Install Ollama from https://ollama.ai
 ollama pull llama3.1
 ```
 
-## 5) Quickstart
+## Quickstart
 1. Put PDFs into `data/`
 ```bash
 python src/main.py
@@ -120,7 +120,7 @@ python src/main.py
     **Answer:**  
     Common approaches include LC–MS/MS, high-resolution mass spectrometry, and derivatization-based enrichment techniques, which enable detection of low-abundance DNA adducts in complex 		biological samples. [review.pdf:3] [methods.pdf:12]
 
-## 6) Configuration
+## Configuration
 	•	Model: llama3.1 via Ollama
 	•	Embeddings: sentence-transformers/all-MiniLM-L6-v2
 	•	Vector store: Chroma persisted locally
@@ -132,11 +132,11 @@ Key variables include:
 - OLLAMA_MODEL (default: llama3.1)
 - HF_TOKEN (optional, speeds up downloads)
 
-## 7) Indexing and updates
+## Indexing and updates
 CiteRAG persists embeddings in chroma_db/. On startup it checks the data/ directory and only embeds new or modified PDFs.
 To force a full rebuild, delete `chroma_db/` and rerun `citerag index`.
 
-## 8) Troubleshooting
+## Troubleshooting
 	•	“ollama: command not found” → install Ollama and restart your terminal
 	•	“model not found” → ollama pull llama3.1
 	•	“no documents loaded” → ensure PDFs exist in data/
